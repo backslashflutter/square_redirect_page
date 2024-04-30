@@ -7,7 +7,7 @@
       var fullUrl = window.location.href;
 
       // Replace a placeholder with the actual code
-      var redirectUrl = fullUrl.replace('code', 'code=' + new URLSearchParams(fullUrl).get('code'));
+      var redirectUrl = fullUrl.replace('authCode', 'code=' + new URLSearchParams(fullUrl).get('code'));
 
       window.location.replace(redirectUrl); 
     }
