@@ -5,39 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirect to Mainstreet</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        p {
-            text-align: center;
-        }
     </style>
     <script>
-        // Function to extract the code parameter from the URL
-        function getCodeFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('code');
-        }
-
-        // Function to redirect to Mainstreet app with the extracted code
-        function redirectToMainstreet(code) {
-            // Replace 'YOUR_MAINSTREET_APP_URL' with the actual URL scheme for your Mainstreet app
-            const mainstreetAppURL = 'mainstreet://' + encodeURIComponent(code);
-            window.location.href = mainstreetAppURL;
-        }
-
-        // Execute the redirection process when the page loads
-        window.onload = function() {
-            const code = getCodeFromURL();
-            if (code) {
-                redirectToMainstreet(code);
-            }
-        };
     </script>
 </head>
 <body>
