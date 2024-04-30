@@ -16,11 +16,6 @@
             // Replace 'YOUR_MAINSTREET_APP_URL' with the actual URL scheme for your Mainstreet app
             const mainstreetAppURL = 'mainstreet://' + encodeURIComponent(code);
             window.location.href = mainstreetAppURL;
-            
-            // Attempt to close the window after redirection
-            setTimeout(function() {
-                window.close();
-            }, 1000); // Adjust the delay as needed
         }
 
         // Execute the redirection process when the page loads
@@ -34,6 +29,6 @@
 </head>
 <body>
     <!-- You can add any loading indicator or message here -->
-    <p>Redirecting...</p>
+    <p>Redirecting to Mainstreet, please wait...</p>
 </body>
 </html>
