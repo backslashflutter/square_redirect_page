@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Redirecting to App...</title>
-  <script>
-    function replaceCode() {
-      var fullUrl = window.location.href;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <script>
+        // Function to extract the code parameter from the URL
+        function getCodeFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('code');
+        }
 
-      // Replace a placeholder with the actual code
-      var redirectUrl = fullUrl.replace('authCode', 'code=' + new URLSearchParams(fullUrl).get('code'));
+        // Function to redirect to Mainstreet app with the extracted code
+        function redirectToMainstreet(code) {
+            // Replace 'YOUR_MAINSTREET_APP_URL' with the actual URL scheme for your Mainstreet app
+            const mainstreetAppURL = 'mainstreet://' + encodeURIComponent(code);
+            window.location.href = mainstreetAppURL;
+        }
 
-      window.location.replace(redirectUrl); 
-    }
-    replaceCode(); // Execute the function
-  </script>
+        // Execute the redirection process when the page loads
+        window.onload = function() {
+            const code = getCodeFromURL();
+            if (code) {
+                redirectToMainstreet(code);
+            }
+        };
+    </script>
 </head>
 <body>
+    <!-- You can add any loading indicator or message here -->
+    <p>Redirecting...</p>
 </body>
 </html>
