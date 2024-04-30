@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redirecting to App...</title>
-    <script>
-        window.location.replace("mainstreet://");
-    </script>
+  <title>Redirecting to App...</title>
+  <script>
+    function replaceCode() {
+      var fullUrl = window.location.href;
+
+      // Replace a placeholder with the actual code
+      var redirectUrl = fullUrl.replace('code', 'code=' + new URLSearchParams(fullUrl).get('code'));
+
+      window.location.replace(redirectUrl); 
+    }
+    replaceCode(); // Execute the function
+  </script>
 </head>
 <body>
 </body>
